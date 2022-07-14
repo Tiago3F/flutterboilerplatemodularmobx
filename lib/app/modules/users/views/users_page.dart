@@ -1,27 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterboilerplatemodularmobx/app/modules/product/controllers/product_store.dart';
-import 'package:flutterboilerplatemodularmobx/app/modules/product/models/post_model.dart';
-import 'package:provider/provider.dart';
 
-class ProductPage extends StatefulWidget {
-  const ProductPage({Key? key}) : super(key: key);
+class UsersPage extends StatefulWidget {
+  const UsersPage({Key? key}) : super(key: key);
 
   @override
-  State<ProductPage> createState() => _ProductPageState();
+  State<UsersPage> createState() => _ProductPageState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _ProductPageState extends State<UsersPage> {
   @override
   Widget build(BuildContext context) {
-    ProductStore store = ProductStore();
-
-    @override
-    void initState() {
-      super.initState();
-      store.getPostData();
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("Product Page"),

@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterboilerplatemodularmobx/app/modules/users/views/teste.dart';
 
 // Importação de paginas
 import 'views/list_product_page.dart';
-import 'views/product_page.dart';
+import 'views/users_page.dart';
 
-class ProductModule extends Module {
+class UsersModule extends Module {
   @override
   List<Bind<Object>> get binds => [];
 
   @override
   List<ModularRoute> get routes => [
-        ChildRoute('/', child: (_, __) => const ProductPage(), children: [
+        ChildRoute('/', child: (_, __) => const UsersPage(), children: [
           ChildRoute(
             '/red',
-            child: (_, __) => Container(
-              color: Colors.red,
-            ),
+            child: (_, __) => const UsersScreen(),
             transition: TransitionType.noTransition,
           ),
           ChildRoute(
