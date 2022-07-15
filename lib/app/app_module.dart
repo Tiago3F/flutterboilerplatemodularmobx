@@ -18,7 +18,7 @@ class AppModule extends Module {
     ModuleRoute('/auth', module: AuthModule()),
     ModuleRoute('/home', module: HomeModule()),
     ModuleRoute(
-      '/products', module: UsersModule(),
+      '/examples', module: UsersModule(),
       // guards: [AuthGuard()]
     ),
     WildcardRoute(

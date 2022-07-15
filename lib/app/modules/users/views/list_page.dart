@@ -13,7 +13,7 @@ class _ProductPageState extends State<UsersPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Product Page"),
+        title: const Text("List Page"),
       ),
       body: Row(
         children: [
@@ -23,15 +23,15 @@ class _ProductPageState extends State<UsersPage> {
             child: Column(
               children: [
                 ListTile(
-                  title: const Text("Red"),
+                  title: const Text("HTTP"),
                   onTap: () {
-                    Modular.to.navigate('./red');
+                    Modular.to.navigate('./HTTP');
                   },
                 ),
                 ListTile(
-                  title: const Text("Blue"),
+                  title: const Text("Dio"),
                   onTap: () {
-                    Modular.to.navigate('./blue');
+                    Modular.to.navigate('./Dio');
                   },
                 ),
                 ListTile(

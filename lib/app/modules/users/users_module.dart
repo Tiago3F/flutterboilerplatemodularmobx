@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterboilerplatemodularmobx/app/modules/users/views/teste.dart';
+import 'package:flutterboilerplatemodularmobx/app/modules/users/views/http_users_screen.dart';
 
 // Importação de paginas
-import 'views/list_product_page.dart';
-import 'views/users_page.dart';
+// import 'views/list_product_page.dart';
+import 'views/dio_users_screen.dart';
+import 'views/list_page.dart';
 
 class UsersModule extends Module {
   @override
@@ -14,15 +15,13 @@ class UsersModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (_, __) => const UsersPage(), children: [
           ChildRoute(
-            '/red',
-            child: (_, __) => const UsersScreen(),
+            '/HTTP',
+            child: (_, __) => const HttpUsersScreen(),
             transition: TransitionType.noTransition,
           ),
           ChildRoute(
-            '/blue',
-            child: (_, __) => Container(
-              color: Colors.blue,
-            ),
+            '/Dio',
+            child: (_, __) => const DioUsersScreen(),
             transition: TransitionType.noTransition,
           ),
           ChildRoute(
@@ -33,12 +32,12 @@ class UsersModule extends Module {
             transition: TransitionType.noTransition,
           )
         ]),
-        ChildRoute(
-          '/list',
-          child: (_, args) => ListProductPage(id: args.data ?? ''),
-          // Animação das rotas
-          transition: TransitionType.fadeIn,
-          // duration: const Duration(seconds: 1)
-        ),
+        // ChildRoute(
+        //   '/list',
+        //   child: (_, args) => ListProductPage(id: args.data ?? ''),
+        //   // Animação das rotas
+        //   transition: TransitionType.fadeIn,
+        //   // duration: const Duration(seconds: 1)
+        // ),
       ];
 }

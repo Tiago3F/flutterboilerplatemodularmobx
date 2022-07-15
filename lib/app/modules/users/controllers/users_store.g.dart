@@ -29,11 +29,11 @@ mixin _$UserStore on _UserStore, Store {
       ActionController(name: '_UserStore', context: context);
 
   @override
-  Future<dynamic> fetchUsersData() {
+  Future<dynamic> fetchUsersDataHttp() {
     final _$actionInfo = _$_UserStoreActionController.startAction(
-        name: '_UserStore.fetchUsersData');
+        name: '_UserStore.fetchUsersDataHttp');
     try {
-      return super.fetchUsersData();
+      return super.fetchUsersDataHttp();
     } finally {
       _$_UserStoreActionController.endAction(_$actionInfo);
     }

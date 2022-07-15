@@ -14,11 +14,19 @@ abstract class _UserStore with Store {
   ObservableFuture<List<User>>? listUsersFuture;
 
   @action
-  Future fetchUsersData() => listUsersFuture = ObservableFuture(apiService
-      .getApiData('https://jsonplaceholder.typicode.com/users')
+  Future fetchUsersDataHttp() => listUsersFuture = ObservableFuture(apiService
+      .getApiDataHttp('https://jsonplaceholder.typicode.com/users')
       .then((users) => users));
 
-  void getUsersData() {
-    fetchUsersData();
+  void getUsersDataHttp() {
+    fetchUsersDataHttp();
+  }
+
+  @action
+  Future fetchUsersDataDio() => listUsersFuture =
+      ObservableFuture(apiService.getApiDataDio().then((users) => users));
+
+  void getUsersDataDio() {
+    fetchUsersDataDio();
   }
 }
