@@ -40,6 +40,17 @@ mixin _$UserStore on _UserStore, Store {
   }
 
   @override
+  Future<dynamic> fetchUsersDataDio() {
+    final _$actionInfo = _$_UserStoreActionController.startAction(
+        name: '_UserStore.fetchUsersDataDio');
+    try {
+      return super.fetchUsersDataDio();
+    } finally {
+      _$_UserStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 listUsersFuture: ${listUsersFuture}

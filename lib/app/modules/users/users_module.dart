@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterboilerplatemodularmobx/app/modules/users/views/http_users_screen.dart';
 
 // Importação de paginas
 // import 'views/list_product_page.dart';
+import '../users_example_crud_dio/views/list_page.dart';
 import 'views/dio_users_screen.dart';
 import 'views/list_page.dart';
 
@@ -25,10 +25,8 @@ class UsersModule extends Module {
             transition: TransitionType.noTransition,
           ),
           ChildRoute(
-            '/yellow',
-            child: (_, __) => Container(
-              color: Colors.yellow,
-            ),
+            '/Userscrud',
+            child: (_, __) => const UsersCrudPage(),
             transition: TransitionType.noTransition,
           )
         ]),

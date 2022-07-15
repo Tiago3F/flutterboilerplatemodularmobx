@@ -35,9 +35,9 @@ class _ProductPageState extends State<UsersPage> {
                   },
                 ),
                 ListTile(
-                  title: const Text("Yellow"),
+                  title: const Text("Example CRUD"),
                   onTap: () {
-                    Modular.to.navigate('./yellow');
+                    Modular.to.navigate('./Userscrud');
                   },
                 )
               ],

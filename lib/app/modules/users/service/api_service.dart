@@ -2,11 +2,14 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 
+import '../../users_example_crud_dio/service/logging.dart';
 import '../models/users_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
   late List<User> listUsers;
+
+  // UTILIZANDO HTTP PARA REQUISIÇÃO
 
   Future getApiDataHttp(String url) async {
     final apiResponse = await http.get(Uri.parse(url));
@@ -21,7 +24,9 @@ class ApiService {
     }
   }
 
-  final Dio _dio = Dio();
+  // UTILIZANDO DIO PARA REQUISIÇÃO
+
+  final Dio _dio = Dio()..interceptors.add(Logging());
 
   Future getApiDataDio() async {
     final apiResponse =
