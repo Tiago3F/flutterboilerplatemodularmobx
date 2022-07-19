@@ -11,6 +11,7 @@ void main() => runApp(
         providers: [
           Provider<HomeStore>(
             create: (_) => HomeStore(),
+
             // dispose: (_, controller) => controller.dispose(),
           ),
         ],
